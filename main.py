@@ -70,7 +70,12 @@ RESID_FLOOR = 0.25      # logit units; a flat series still has refresh noise
 SPREAD_FLOOR = 0.30
 SPREAD_CAP = 2.5
 SLOPE_CAP = 2.5
-REFRESH_LOGIT = 0.9     # typical logit drop when Exophase refreshes a flat page
+REFRESH_LOGIT = 1.5     # typical logit drop when Exophase refreshes a flat page
+                        # (raised from 0.9 on 2026-11-21: validation showed the
+                        # downside tail was too thin for diluted answers --
+                        # practice f<1 mean loss 0.5394 -> 0.4870, f=1.0
+                        # 0.0685 -> 0.0827, synthetic final also slightly
+                        # better; medians untouched, only s_down widens)
 REFRESH_EVERY_HOURS = 5.0
 
 
